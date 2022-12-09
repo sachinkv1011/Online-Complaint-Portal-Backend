@@ -42,8 +42,8 @@ public class UserController {
         List<UserModel> result = (List<UserModel>) udao.userloginCheck(um.getUserName(), um.getPassword());
         if (result.size() != 0) {
             map.put("status", "login success");
-            int id = result.get(0).getId();
-            System.out.println("userid:" + id);
+            String id = String.valueOf(result.get(0).getId());
+            map.put("userid",id);
         } else {
             map.put("status", "Unauthorized access");
         }
