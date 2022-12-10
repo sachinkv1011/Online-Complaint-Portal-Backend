@@ -49,6 +49,16 @@ public class UserController {
         }
         return map;
     }
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/userProfile",consumes = "application/json",produces = "application/json")
+    List<UserModel> userProfile(@RequestBody UserModel um){
+        List<UserModel> result=(List<UserModel>) udao.userProfile(um.getId());
+        HashMap<String,String> map=new HashMap<>();
+        map.put("status","userinfo retrieved");
+        return result;
+
+
+    }
 
 
 }

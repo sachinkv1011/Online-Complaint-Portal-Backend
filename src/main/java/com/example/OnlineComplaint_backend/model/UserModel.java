@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Table(name="userRegistration")
 public class UserModel {
     @Id
-    @GeneratedValue
+    @GeneratedValue()
     private int id;
     private String name;
     private String address;
